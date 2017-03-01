@@ -1,4 +1,5 @@
 library(ggplot2)
+library(viridis)
 set.seed(2017)
 
 ## Generate data set with patterns
@@ -40,7 +41,9 @@ ggplot() +
 # Hex Bins
 ggplot() + 
     stat_binhex(aes(x = x, y = y)) +
-    scale_fill_gradient(low='white', high='red', trans = 'log10', 
-                        limits=c(1, 200000), name = 'log10(count)'
-                        )
+    scale_fill_gradientn(colours = viridis(256), 
+                         trans = 'log10', 
+                         limits=c(1, 200000),
+                         name = 'log10(count)'
+                         )
                
